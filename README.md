@@ -29,7 +29,7 @@ Then, generate public key
 ```shell
 openssl rsa -in private.pem -pubout -out public.pem
 ```
-The format of the public&private key should like this
+The format of the public and private key should like this
 ```plain text
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA43GuI2kHsY9IWtMbO5vU
