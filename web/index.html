@@ -32,7 +32,7 @@
             <p>2. Assuming you are the server, and the user wants to send you a message, but the message cannot be plain text and must be encrypted using a specific encryption algorithm.</p>
             <p>3. As the server, you need to first generate a pair of public and private keys. (OpenSSL is recommended)</p>
             <p>4. The user will send you two ciphertexts, both of which need to be decrypted.</p>
-            <p>5. Try putting one of the decrypted plaintexts into the validation box on the right.</p>
+            <p>5. Once you successfully decrypt the ciphers, the message will be given.</p>
             <p style="color: red">6. I highly recommend using OpenSSL in the process of decryption, as tools from websites may not be reliable.</p>
           </el-collapse-item>
         </el-collapse>
@@ -82,7 +82,7 @@
               :rows="5"
               type="textarea"
               v-model="form2.message"
-              placeholder="Input encrypted message"></el-input>
+              placeholder="Input decrypted message"></el-input>
           </el-form-item>
           <el-form-item>
             <el-button

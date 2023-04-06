@@ -23,7 +23,7 @@ def get_web():
     return send_from_directory('web', 'index.html')
 
 
-@app.route("/send_key", methods=['POST'])
+@app.route("/api/send_key", methods=['POST'])
 def send_key():
     time.sleep(.5)
 
@@ -55,7 +55,7 @@ def send_key():
     return jsonify(response), 200
 
 
-@app.route('/validate', methods=['POST'])
+@app.route('/api/validate', methods=['POST'])
 def validate_message():
     time.sleep(.5)
 
@@ -83,4 +83,4 @@ def validate_message():
 
 if __name__ == "__main__":
     huser = Https('')
-    app.run()
+    app.run(host='0.0.0.0', port=5000)

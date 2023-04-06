@@ -26,7 +26,7 @@ const app = Vue.createApp({
         if (valid) {
           this.isSending = true
 
-          axios.post('/send_key', {
+          axios.post('/api/send_key', {
             key: this.form1.key
           })
             .then(response => {
@@ -57,7 +57,7 @@ const app = Vue.createApp({
         if (valid) {
           this.isValidating = true
 
-          axios.post('/validate', {
+          axios.post('/api/validate', {
             message: this.form2.message
           })
           .then(response => {
