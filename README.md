@@ -1,6 +1,6 @@
 # CTF-GAME
 This is a simple CTF game. The basic idea is to simulate the process of SSL.
-## Simpl description of SSL
+## Simple description of SSL
 1. The client initiates an SSL connection request to the server, which includes information such as the encryption algorithm and protocol version supported by the client.
 
 2. The server sends a certificate to the client, which contains information such as the server's public key, the certificate's issuer, and validity period.
