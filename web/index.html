@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMP7170-CTF</title>
+  <!-- <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" /> -->
+  <link rel="stylesheet" href="/web/css/element.css">
+  <link rel="stylesheet" href="/web/css/index.css">
+  <script src="/web/js/vue3.js"></script>
+  <script src="/web/js/element-plus.js"></script>
+  <script src="/web/js/axios.js"></script>
+</head>
+<body>
+  <div id="app" class="container">
+    <div style="text-align: center;">
+      <img src="/web/imgs/HKBU_Logo.svg" alt="HKBU Logo" style="height: 150px; margin-top: 20px;">
+      <h1 style="margin-top: 10px; font-size: 35px;">{{title}}</h1>
+    </div>
+
+    <div style="display: flex; justify-content: center;" class="tips">
+      <el-card class="tips-card">
+        <el-collapse v-model="show">
+          <el-collapse-item name="tips">
+            <template #title>
+              <p class="title">View tips</p>
+            </template>
+            <p>1. Now we are going to simulate the process of establishing an HTTPS connection. </p>
+            <p>2. Assuming you are the server, and the user wants to send you a message, but the message cannot be plain text and must be encrypted using a specific encryption algorithm.</p>
+            <p>3. As the server, you need to first generate a pair of public and private keys. (OpenSSL is recommended)</p>
+            <p>4. The user will send you two ciphertexts, both of which need to be decrypted.</p>
+            <p>5. Try putting one of the decrypted plaintexts into the validation box on the right.</p>
+            <p style="color: red">6. I highly recommend using OpenSSL in the process of decryption, as tools from websites may not be reliable.</p>
+          </el-collapse-item>
+        </el-collapse>
+      </el-card>
+    </div>
+
+    <div style="display: flex; justify-content: center;" v-if="cipher1">
+      <el-card class="cipher-card">
+        <div style="word-wrap: break-word;">{{cipher1}}</div>
+      </el-card>
+    </div>
+    <div style="display: flex; justify-content: center;" v-if="cipher2">
+      <el-card class="cipher-card">
+        <div style="word-wrap: break-word;">{{cipher2}}</div>
+      </el-card>
+    </div>
+
+    <div style="display: flex; justify-content: center; margin-top: 15px;">
+      <el-card class="left-card" style="margin-right: 20px;">
+        <el-form
+          :rules="rules"
+          ref="form1"
+          :model="form1">
+          <el-form-item label="Key" prop="key">
+            <el-input
+              :rows="5"
+              type="textarea"
+              v-model="form1.key"
+              placeholder="key"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button
+              @click="onSendKey"
+              type="primary"
+              style="width: 100%;">Send to user</el-button>
+          </el-form-item>
+        </el-form>
+      </el-card>
+      <el-card class="right-card">
+        <el-form
+          :rules="rules"
+          ref="form2"
+          :model="form2">
+          <el-form-item label="Message" prop="message">
+            <el-input
+              :rows="5"
+              type="textarea"
+              v-model="form2.message"
+              placeholder="Input encrypted message"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button
+              @click="onSubmit"
+              type="primary"
+              style="width: 100%;">Validate</el-button>
+          </el-form-item>
+        </el-form>
+      </el-card>
+    </div>
+  </div>
+  <script src="/web/js/index.js"></script>
+</body>
+</html>

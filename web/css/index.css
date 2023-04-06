@@ -1,0 +1,36 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+.container {  
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+.tips-card .el-card__body {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.el-collapse, .el-collapse-item__header, .el-collapse-item__wrap {
+  border: none;
+}
+.tips p {
+  margin: 0;
+  margin: 5px 0;
+  font-size: 12px;
+  text-align: justify;
+}
+.tips .title {
+  font-size: 15px;
+  font-weight: bold;
+}
+.cipher-card {
+  font-size: 12px;
+  width: 820px;
+  margin-top: 15px;
+}
+.tips-card {
+  width: 820px;
+}
+.left-card, .right-card {
+  width: 400px;
+}
