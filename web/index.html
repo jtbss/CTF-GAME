@@ -14,6 +14,8 @@
 </head>
 <body>
   <div id="app" class="container">
+    <div id="notification"></div>
+
     <div style="text-align: center;">
       <img src="/web/imgs/HKBU_Logo.svg" alt="HKBU Logo" style="height: 150px; margin-top: 20px;">
       <h1 style="margin-top: 10px; font-size: 35px;">{{title}}</h1>
@@ -24,7 +26,7 @@
         <el-collapse v-model="show">
           <el-collapse-item name="tips">
             <template #title>
-              <p class="title">View tips</p>
+              <p class="title">View tips 😎😈</p>
             </template>
             <p>1. Now we are going to simulate the process of establishing an HTTPS connection. </p>
             <p>2. Assuming you are the server, and the user wants to send you a message, but the message cannot be plain text and must be encrypted using a specific encryption algorithm.</p>
@@ -64,6 +66,7 @@
           <el-form-item>
             <el-button
               @click="onSendKey"
+              :loading="isSending"
               type="primary"
               style="width: 100%;">Send to user</el-button>
           </el-form-item>
@@ -83,7 +86,8 @@
           </el-form-item>
           <el-form-item>
             <el-button
-              @click="onSubmit"
+              @click="onValidate"
+              :loading="isValidating"
               type="primary"
               style="width: 100%;">Validate</el-button>
           </el-form-item>
