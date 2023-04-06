@@ -1,5 +1,9 @@
 # CTF-GAME
 This is a simple CTF game. The basic idea is to simulate the process of SSL.
+## Run the program
+```shell
+python app.py
+```
 ## Simple description of SSL
 1. The client initiates an SSL connection request to the server, which includes information such as the encryption algorithm and protocol version supported by the client.
 
