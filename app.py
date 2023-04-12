@@ -82,5 +82,5 @@ def validate_message():
         return jsonify(response), 400
 
 if __name__ == "__main__":
-    huser = Https('')
+    huser = Https(None)
     app.run(host='0.0.0.0', port=5000)
